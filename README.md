@@ -12,3 +12,10 @@
     yarn start (--> then go to http://localhost:3000/)
 
 # Assignment: Create UserInput and UserOutput components
+    Create UserInput to accept name as input text
+    Create UserOutput component to display paragraph
+    Refer UserInput and UserOutput components in a parent component (say Contact)
+    Using state in Contact, bind the userinput to state. 
+        So that input entered in UserInput component is available as state variable in parent
+    Using props, pass the name in state to UserOutput for display purpose
+    Using props, pass the name in state to UserInput for 2 way binding i.e to display it inside input text box

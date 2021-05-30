@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import UserInput from "./UserInput/UserInput";
+import UserOutput from "./UserOutput/UserOutput";
 
 const Contact = () => {
+
+    const [name, setName] = useState("unknown yet");
+
+    const setNameHandler = (event) => {
+        setName(event.target.value);
+    }
+
     return (
         <div className="content-style">
-            <h2> https://www.linkedin.com/in/ashish-sheelavantar-79241662/ </h2>
-            <h2> India </h2>
+            <UserInput onChange={setNameHandler} currentName={name}/>
+            <UserOutput name={name}/>
+            <UserOutput name="WhoamI?"/>
         </div>
     )
 

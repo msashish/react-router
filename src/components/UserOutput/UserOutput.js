@@ -4,9 +4,8 @@ import './UserOutput.css';
 const UserOutput = (props) => {
 
     return (
-        <div className="UserOutput">
+        <div className="UserOutput" onClick={props.click}>
             <p> My Name is {props.name}</p>
-            <p></p>
         </div>
 
     )

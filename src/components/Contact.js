@@ -5,29 +5,33 @@ import UserOutput from "./UserOutput/UserOutput";
 const Contact = () => {
 
     const [biodata, setBiodata] = useState([
-        {name: "unknown yet", age: 25},
-        {name: "unknown yet", age: 28},
-        {name: "unknown yet", age: 28}
+        {id: '001', name: "unknown yet", age: 25},
+        {id: '002', name: "unknown yet", age: 28},
+        {id: '003', name: "unknown yet", age: 28}
     ]);
 
     const setNameHandler = (event) => {
         setBiodata([
-            {name: event.target.value, age: 25},
-            {name: "whoami?", age: 40},
-            {name: "unknown yet", age: 28}]);
+            {id: '001',name: event.target.value, age: 25},
+            {id: '002',name: "whoami?", age: 40},
+            {id: '003',name: "unknown yet", age: 28}]);
     }
 
     const nameEncryptHandler = (userIndex) => {
         //const bio = biodata.slice();
         const bio = [...biodata];
         //bio.splice(userIndex, 1);
-        bio[userIndex] = {name: "Encrypted", age: 30}
+        bio[userIndex] = {id: bio[userIndex].id, name: "Encrypted", age: bio[userIndex].age}
         setBiodata(bio);
     }
 
     const persons = (
             biodata.map((user, index) => {
-            return <UserOutput name={user.name} click={() => nameEncryptHandler(index)}/>
+            return <UserOutput 
+                    name={user.name} 
+                    click={() => nameEncryptHandler(index)}
+                    key={user.id}
+                    />
             }
             )
         );

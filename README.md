@@ -21,4 +21,6 @@
     Using props, pass the name in state to UserInput for 2 way binding i.e to display it inside input text box
 
 
-# Assignment: Create list object and char component
+# Following are some interesting components: 
+        ListAssignment --> Checking if text is long or short. Displaying its characters and deleting when clicked.
+        ListSteps      --> Take a number and tick-mark the circle based on the number. As though step has been completed.
